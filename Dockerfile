@@ -1,7 +1,7 @@
 FROM golang:1.12.7-alpine as builder
 
 RUN apk update
-RUN apk add git
+RUN apk add git gcc
 
 WORKDIR /go/src/github.com/form-is-function/roscetta
 COPY Gopkg.* ./
