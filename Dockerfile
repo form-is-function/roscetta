@@ -18,7 +18,7 @@ ENV GOARCH=arm
 ENV GOARM=7
 RUN go build -o /tmp/proxy cmd/proxy/main.go
 
-FROM balenalib/armv7hf-alpine
+FROM balenalib/armv7hf-debian
 
 WORKDIR /opt/roscetta
 
