@@ -15,6 +15,7 @@ COPY . .
 ENV GOOS=linux
 ENV GOARCH=arm
 ENV GOARM=7
+ENV CGO_ENABLED=0
 RUN go build -o /tmp/proxy cmd/proxy/main.go
 
 FROM balenalib/armv7hf-alpine
