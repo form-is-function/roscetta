@@ -40,7 +40,7 @@ func main() {
     log.Fatalln(err)
   }
 
-  addr := "127.0.0.1:9000"
+  addr := "0.0.0.0:9000"
   server := &osc.Server{Addr: addr}
 
   err = server.Handle("/door/unlock", func(msg *osc.Message) {
