@@ -41,11 +41,11 @@ func main() {
 
 	log.Println("Connecting/staring publisher")
 	go func() {
-      err = bus.ConnectAndPublish()
-      if err != nil {
-        log.Println(err)
-      }
-    }()
+		err = bus.ConnectAndPublish()
+		if err != nil {
+			log.Println(err)
+		}
+	}()
 
 	log.Println("Setting up OSC")
 	addr := "0.0.0.0:9000"
