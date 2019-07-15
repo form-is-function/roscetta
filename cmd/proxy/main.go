@@ -44,6 +44,7 @@ func main() {
   server := &osc.Server{Addr: addr}
 
   err = server.Handle("/door/unlock", func(msg *osc.Message) {
+    log.Println("msg at /door/unlock: ", msg.String())
     err := bus.Publish(canFrameUnlock)
     if err != nil {
       log.Println(err)
@@ -54,6 +55,7 @@ func main() {
   }
 
   err = server.Handle("/door/lock", func(msg *osc.Message) {
+    log.Println("msg at /door/lock: ", msg.String())
     err := bus.Publish(canFrameLock)
     if err != nil {
       log.Println(err)
