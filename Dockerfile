@@ -23,5 +23,6 @@ FROM balenalib/armv7hf-debian
 WORKDIR /opt/roscetta
 
 COPY --from=builder /tmp/proxy /opt/roscetta/
+COPY start.sh /opt/roscetta/
 
-CMD ["/opt/roscetta/proxy"]
+CMD ["/opt/roscetta/start.sh"]
