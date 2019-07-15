@@ -34,10 +34,14 @@ func main() {
     log.Println("Goodbye!")
   }()
 
-  bus, _ := can.NewBusForInterfaceWithName(CanInterfaceName)
-  err := bus.ConnectAndPublish()
+  bus, err := can.NewBusForInterfaceWithName(CanInterfaceName)
   if err != nil {
     log.Fatalln(err)
+  }
+
+  err = bus.ConnectAndPublish()
+  if err != nil {
+    log.Println(err)
   }
 
   addr := "0.0.0.0:9000"
@@ -77,5 +81,6 @@ func main() {
     }
   })
 
+  log.Println("All setup, starting OSC server")
   log.Fatalln(server.ListenAndServe())
 }
